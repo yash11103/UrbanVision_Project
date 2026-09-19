@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Garbage Detection - UrbanVision</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<div class="sidebar">
+
+    <h2>UrbanVision</h2>
+
+    <a href="/">
+         Dashboard
+    </a>
+
+    <a href="/drainage">
+         Drainage
+    </a>
+
+    <a href="/streetlights">
+        Streetlights
+    </a>
+
+    <a href="/garbage" class="active">
+        🗑Garbage
+    </a>
+
+    <a href="/alerts">
+         Alerts
+    </a>
+
+</div>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<div class="main">
+
+    <!-- Page Header -->
+
+    <div class="page-header">
+
+        <h1>
+            AI Garbage Detection
+        </h1>
+
+        <p>
+            AI-Based Garbage Detection and Civic Waste Monitoring
+        </p>
+
+    </div>
+
+
+    <!-- =================================================
+         SUMMARY CARDS
+    ================================================== -->
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>
+                🗑 Total Detections
+            </h3>
+
+            <h1 id="totalDetections">
+                0
+            </h1>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                🔴 High Severity
+            </h3>
+
+            <h1 id="highSeverity">
+                0
+            </h1>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                ⚠️ Active Issues
+            </h3>
+
+            <h1 id="activeIssues">
+                0
+            </h1>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                ✅ Resolved Issues
+            </h3>
+
+            <h1 id="resolvedIssues">
+                0
+            </h1>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         GARBAGE DETECTION TABLE
+    ================================================== -->
+
+    <div class="section">
+
+        <div class="section-header">
+
+            <h2>
+                Garbage Detection History
+            </h2>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            ID
+                        </th>
+
+                        <th>
+                            Location
+                        </th>
+
+                        <th>
+                            Garbage Type
+                        </th>
+
+                        <th>
+                            Severity
+                        </th>
+
+                        <th>
+                            Detection Time
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="garbageTable">
+
+                    <tr>
+
+                        <td
+                            colspan="6"
+                            class="empty-state"
+                        >
+                            Loading garbage detection data...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         AI GARBAGE DETECTION INFORMATION
+    ================================================== -->
+
+    <div class="section">
+
+        <h2>
+            AI Garbage Detection Information
+        </h2>
+
+
+        <div class="overview-grid">
+
+            <div class="overview-item">
+
+                <span>
+                    Detection Method
+                </span>
+
+                <strong>
+                    AI / CNN
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    Detection Output
+                </span>
+
+                <strong>
+                    Garbage Type
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    High Severity
+                </span>
+
+                <strong>
+                    Immediate Attention
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    Issue Status
+                </span>
+
+                <strong>
+                    OPEN / RESOLVED
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="/static/garbage.js"></script>
+
+</body>
+
+</html>

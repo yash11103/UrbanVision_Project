@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alerts & Incident Center - UrbanVision</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<div class="sidebar">
+
+    <h2>UrbanVision</h2>
+
+    <a href="/">
+        🏠 Dashboard
+    </a>
+
+    <a href="/drainage">
+        🌊 Drainage
+    </a>
+
+    <a href="/streetlights">
+        💡 Streetlights
+    </a>
+
+    <a href="/garbage">
+        🗑 Garbage
+    </a>
+
+    <a href="/alerts" class="active">
+        🚨 Alerts
+    </a>
+
+</div>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<div class="main">
+
+    <!-- Page Header -->
+
+    <div class="page-header">
+
+        <h1>
+            Alerts & Incident Center
+        </h1>
+
+        <p>
+            Centralized Civic Incident Monitoring, Alerts and Escalation
+        </p>
+
+    </div>
+
+
+    <!-- =================================================
+         SUMMARY CARDS
+    ================================================== -->
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>
+                🚨 Active Incidents
+            </h3>
+
+            <h1 id="activeAlerts">
+                0
+            </h1>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                ⏰ Overdue Incidents
+            </h3>
+
+            <h1 id="overdueAlerts">
+                0
+            </h1>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                🔺 Escalated Incidents
+            </h3>
+
+            <h1 id="escalatedAlerts">
+                0
+            </h1>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                ✅ Resolved Incidents
+            </h3>
+
+            <h1 id="resolvedAlerts">
+                0
+            </h1>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         INCIDENT TABLE
+    ================================================== -->
+
+    <div class="section">
+
+        <div class="section-header">
+
+            <h2>
+                Civic Incidents
+            </h2>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Action
+                        </th>
+
+                        <th>
+                            Incident
+                        </th>
+
+                        <th>
+                            Module
+                        </th>
+
+                        <th>
+                            Location
+                        </th>
+
+                        <th>
+                            Issue
+                        </th>
+
+                        <th>
+                            Severity
+                        </th>
+
+                        <th>
+                            Detected
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Escalation
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="alertsTable">
+
+                    <tr>
+
+                        <td
+                            colspan="9"
+                            class="empty-state"
+                        >
+                            Loading incidents...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         INCIDENT WORKFLOW
+    ================================================== -->
+
+    <div class="section">
+
+        <h2>
+            Incident Management Workflow
+        </h2>
+
+
+        <div class="overview-grid">
+
+            <div class="overview-item">
+
+                <span>
+                    1. Detection
+                </span>
+
+                <strong>
+                    Incident Created
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    2. First Alert
+                </span>
+
+                <strong>
+                    Authority Notified
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    3. Escalation
+                </span>
+
+                <strong>
+                    Higher Authority
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    4. Resolution
+                </span>
+
+                <strong>
+                    Incident Closed
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         ALERT INFORMATION
+    ================================================== -->
+
+    <div class="section">
+
+        <h2>
+            Alert Management
+        </h2>
+
+
+        <div class="overview-grid">
+
+            <div class="overview-item">
+
+                <span>
+                    Alert Channels
+                </span>
+
+                <strong>
+                    Mobile + Email
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    Authority Assignment
+                </span>
+
+                <strong>
+                    Tracked
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    Due Date
+                </span>
+
+                <strong>
+                    Tracked
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    Escalation
+                </span>
+
+                <strong>
+                    Automatic
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="/static/alerts.js"></script>
+
+</body>
+
+</html>

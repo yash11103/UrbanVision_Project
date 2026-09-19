@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UrbanVision Smart City Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+
+<div class="sidebar">
+
+    <div class="logo">
+        UrbanVision
+    </div>
+
+    <nav>
+
+        <a href="/" class="active">
+            Dashboard
+        </a>
+
+        <a href="/drainage">
+            Drainage
+        </a>
+
+        <a href="/streetlights">
+            Streetlights
+        </a>
+
+        <a href="/garbage">
+            Garbage
+        </a>
+
+        <a href="/alerts">
+            Alerts
+        </a>
+
+    </nav>
+
+</div>
+
+
+<!-- ================= MAIN ================= -->
+
+<div class="main">
+
+    <div class="page-header">
+
+        <h1>
+            UrbanVision Smart City Dashboard
+        </h1>
+
+        <p>
+            AI-Powered Civic Infrastructure Monitoring & Alert System
+        </p>
+
+    </div>
+
+
+    <!-- ================= ONLY 4 MAIN CARDS ================= -->
+
+    <div class="cards">
+
+        <!-- DRAINAGE -->
+
+        <a href="/drainage"
+           class="dashboard-card-link">
+
+            <div class="card">
+
+                <h3>
+                    Drainage Readings
+                </h3>
+
+                <h1 id="totalReadings">
+                    0
+                </h1>
+
+                <p>
+                    Total Readings
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- STREETLIGHTS -->
+
+        <a href="/streetlights"
+           class="dashboard-card-link">
+
+            <div class="card">
+
+                <h3>
+                    Streetlights
+                </h3>
+
+                <h1 id="totalStreetlights">
+                    0
+                </h1>
+
+                <p>
+                    Monitored Lights
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- GARBAGE -->
+
+        <a href="/garbage"
+           class="dashboard-card-link">
+
+            <div class="card">
+
+                <h3>
+                    Garbage Detection
+                </h3>
+
+                <h1 id="garbageIssues">
+                    0
+                </h1>
+
+                <p>
+                    Active Issues
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <!-- ACTIVE ALERTS -->
+
+        <a href="/alerts"
+           class="dashboard-card-link">
+
+            <div class="card">
+
+                <h3>
+                    Active Alerts
+                </h3>
+
+                <h1 id="alertCount">
+                    0
+                </h1>
+
+                <p>
+                    Active Incidents
+                </p>
+
+            </div>
+
+        </a>
+
+    </div>
+
+
+    <!-- ================= SMART CITY INFORMATION ================= -->
+
+    <div class="card"
+         style="margin-top: 15px; text-align: center;">
+
+        <h2>
+            Smart City Monitoring
+        </h2>
+
+        <p style="font-size: 16px; color: #64748b; margin-top: 8px; margin-bottom: 0;">
+            Real-time monitoring of drainage, streetlights, waste detection,
+            and civic incidents through a centralized AI-powered platform.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Streetlight Monitoring - UrbanVision</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<div class="sidebar">
+
+    <h2>UrbanVision</h2>
+
+    <a href="/">
+        Dashboard
+    </a>
+
+    <a href="/drainage">
+         Drainage
+    </a>
+
+    <a href="/streetlights" class="active">
+         Streetlights
+    </a>
+
+    <a href="/garbage">
+        Garbage
+    </a>
+
+    <a href="/alerts">
+         Alerts
+    </a>
+
+</div>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<div class="main">
+
+    <!-- Page Header -->
+
+    <div class="page-header">
+
+        <h1>
+            Streetlight Monitoring
+        </h1>
+
+        <p>
+            Smart Streetlight Status and Performance Monitoring
+        </p>
+
+    </div>
+
+
+    <!-- =================================================
+         SUMMARY CARDS
+    ================================================== -->
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>
+                💡 Total Streetlights
+            </h3>
+
+            <h1 id="totalLights">
+                0
+            </h1>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                🟢 Lights ON
+            </h3>
+
+            <h1 id="lightsOn">
+                0
+            </h1>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                ⚠️ Faulty Lights
+            </h3>
+
+            <h1 id="lightFaults">
+                0
+            </h1>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                🔆 Average Brightness
+            </h3>
+
+            <h1 id="averageBrightness">
+                0%
+            </h1>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         STREETLIGHT TABLE
+    ================================================== -->
+
+    <div class="section">
+
+        <div class="section-header">
+
+            <h2>
+                Streetlight Status
+            </h2>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            ID
+                        </th>
+
+                        <th>
+                            Location
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Brightness
+                        </th>
+
+                        <th>
+                            Last Updated
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="streetlightTable">
+
+                    <tr>
+
+                        <td
+                            colspan="5"
+                            class="empty-state"
+                        >
+                            Loading streetlight data...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         STREETLIGHT INFORMATION
+    ================================================== -->
+
+    <div class="section">
+
+        <h2>
+            Smart Streetlight Information
+        </h2>
+
+
+        <div class="overview-grid">
+
+            <div class="overview-item">
+
+                <span>
+                    Monitoring Type
+                </span>
+
+                <strong>
+                    Streetlight Status
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    ON Status
+                </span>
+
+                <strong>
+                    Operational
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    OFF Status
+                </span>
+
+                <strong>
+                    Not Active
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    FAULT Status
+                </span>
+
+                <strong>
+                    Requires Attention
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="/static/streetlights.js"></script>
+
+</body>
+
+</html>

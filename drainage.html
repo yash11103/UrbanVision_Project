@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Drainage Monitoring - UrbanVision</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
+
+<div class="sidebar">
+
+    <h2>UrbanVision</h2>
+
+    <a href="/">
+         Dashboard
+    </a>
+
+    <a href="/drainage" class="active">
+         Drainage
+    </a>
+
+    <a href="/streetlights">
+         Streetlights
+    </a>
+
+    <a href="/garbage">
+         Garbage
+    </a>
+
+    <a href="/alerts">
+         Alerts
+    </a>
+
+</div>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<div class="main">
+
+    <!-- Page Header -->
+
+    <div class="page-header">
+
+        <h1>
+            Drainage Monitoring
+        </h1>
+
+        <p>
+            Smart Drainage Water-Level Monitoring
+        </p>
+
+    </div>
+
+
+    <!-- =================================================
+         SUMMARY CARDS
+    ================================================== -->
+
+    <div class="cards">
+
+        <div class="card">
+
+            <h3>
+                🌊 Current Water Level
+            </h3>
+
+            <h1 id="currentWaterLevel">
+                --
+            </h1>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                📊 Current Status
+            </h3>
+
+            <h1 id="currentStatus">
+                --
+            </h1>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                📈 Total Readings
+            </h3>
+
+            <h1 id="totalReadings">
+                0
+            </h1>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                🚨 Total Alerts
+            </h3>
+
+            <h1 id="alertCount">
+                0
+            </h1>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         DRAINAGE READING HISTORY
+    ================================================== -->
+
+    <div class="section">
+
+        <div class="section-header">
+
+            <h2>
+                Drainage Reading History
+            </h2>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Water Level
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Reading Time
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="drainageTable">
+
+                    <tr>
+
+                        <td
+                            colspan="3"
+                            class="empty-state"
+                        >
+                            Loading drainage readings...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- =================================================
+         MONITORING INFORMATION
+    ================================================== -->
+
+    <div class="section">
+
+        <h2>
+            Smart Drainage Information
+        </h2>
+
+
+        <div class="overview-grid">
+
+            <div class="overview-item">
+
+                <span>
+                    Monitoring Type
+                </span>
+
+                <strong>
+                    Water Level
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    Alert Threshold
+                </span>
+
+                <strong>
+                    70%
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    Normal Status
+                </span>
+
+                <strong>
+                    Below 70%
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    Alert Status
+                </span>
+
+                <strong>
+                    70% or Higher
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="/static/drainage.js"></script>
+
+</body>
+
+</html>

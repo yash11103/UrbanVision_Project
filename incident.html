@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Incident Details - UrbanVision</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     SIDEBAR
+========================================================= -->
+
+<div class="sidebar">
+
+    <div class="logo">
+        UrbanVision
+    </div>
+
+    <nav>
+
+        <a href="/" class="nav-item">
+             Dashboard
+        </a>
+
+        <a href="/drainage" class="nav-item">
+             Drainage
+        </a>
+
+        <a href="/streetlights" class="nav-item">
+             Streetlights
+        </a>
+
+        <a href="/garbage" class="nav-item">
+             Garbage
+        </a>
+
+        <a href="/alerts" class="nav-item active">
+             Alerts
+        </a>
+
+    </nav>
+
+</div>
+
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<div class="main">
+
+
+    <div class="page-header">
+
+        <h1>
+            Incident Details
+        </h1>
+
+        <p>
+            Civic Incident Monitoring and Resolution
+        </p>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         BACK BUTTON
+    ====================================================== -->
+
+    <div class="card">
+
+        <a href="/alerts" class="view-button">
+            ← Back to Alerts
+        </a>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         INCIDENT OVERVIEW
+    ====================================================== -->
+
+    <div class="card">
+
+        <h2>
+            Incident Overview
+        </h2>
+
+        <div class="overview-grid">
+
+
+            <div class="overview-item">
+
+                <span>
+                    Incident Code
+                </span>
+
+                <strong id="incidentCode">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    Module
+                </span>
+
+                <strong id="module">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    Location
+                </span>
+
+                <strong id="location">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    Issue Type
+                </span>
+
+                <strong id="issueType">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    Severity
+                </span>
+
+                <strong id="severity">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    Status
+                </span>
+
+                <strong id="status">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    Detected Time
+                </span>
+
+                <strong id="detectedTime">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    Due Date
+                </span>
+
+                <strong id="dueDate">
+                    --
+                </strong>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         ASSIGNED AUTHORITY
+    ====================================================== -->
+
+    <div class="card">
+
+        <h2>
+            Assigned Authority
+        </h2>
+
+        <div class="overview-grid">
+
+
+            <div class="overview-item">
+
+                <span>
+                    Authority
+                </span>
+
+                <strong id="authority">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    Mobile Number
+                </span>
+
+                <strong id="authorityMobile">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    Email
+                </span>
+
+                <strong id="authorityEmail">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    First Alert
+                </span>
+
+                <strong id="firstAlert">
+                    --
+                </strong>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         ESCALATION INFORMATION
+    ====================================================== -->
+
+    <div class="card">
+
+        <h2>
+            Escalation Information
+        </h2>
+
+        <div class="overview-grid">
+
+
+            <div class="overview-item">
+
+                <span>
+                    Escalation Level
+                </span>
+
+                <strong id="escalationLevel">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    Escalation Time
+                </span>
+
+                <strong id="escalationTime">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    Higher Authority
+                </span>
+
+                <strong id="higherAuthority">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    Higher Authority Mobile
+                </span>
+
+                <strong id="higherAuthorityMobile">
+                    --
+                </strong>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    Higher Authority Email
+                </span>
+
+                <strong id="higherAuthorityEmail">
+                    --
+                </strong>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         RESOLUTION
+    ====================================================== -->
+
+    <div class="card">
+
+        <h2>
+            Resolution
+        </h2>
+
+        <div class="overview-grid">
+
+
+            <div class="overview-item">
+
+                <span>
+                    Current Status
+                </span>
+
+                <select id="statusSelect">
+
+                    <option value="OPEN">
+                        OPEN
+                    </option>
+
+                    <option value="IN_PROGRESS">
+                        IN PROGRESS
+                    </option>
+
+                    <option value="RESOLVED">
+                        RESOLVED
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="overview-item">
+
+                <span>
+                    Resolved Time
+                </span>
+
+                <strong id="resolvedTime">
+                    --
+                </strong>
+
+            </div>
+
+
+        </div>
+
+
+        <div style="margin-top:20px;">
+
+            <button
+                id="updateStatusButton"
+                class="view-button"
+                onclick="updateIncidentStatus()"
+            >
+                Update Status
+            </button>
+
+            <span
+                id="updateMessage"
+                style="margin-left:15px;"
+            ></span>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =========================================================
+     INCIDENT JAVASCRIPT
+========================================================= -->
+
+<script>
+
+
+/*
+============================================================
+INCIDENT ID
+
+Flask/Jinja inserts the actual incident ID here.
+
+Using Number("{{ incident_id }}")
+prevents VS Code from showing a JavaScript syntax error.
+============================================================
+*/
+
+const incidentId = Number("{{ incident_id }}");
+
+
+
+// ============================================================
+// LOAD INCIDENT
+// ============================================================
+
+async function loadIncident() {
+
+    try {
+
+        const response =
+            await fetch(`/api/incidents/${incidentId}`);
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Failed to load incident"
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        /*
+        Backend returns:
+
+        {
+            "incident": {...}
+        }
+        */
+
+        const incident =
+            data.incident;
+
+
+        if (!incident) {
+
+            throw new Error(
+                "Incident data not found"
+            );
+
+        }
+
+
+
+        // ====================================================
+        // INCIDENT OVERVIEW
+        // ====================================================
+
+        setText(
+            "incidentCode",
+            incident.incident_code
+        );
+
+
+        setText(
+            "module",
+            incident.module
+        );
+
+
+        setText(
+            "location",
+            incident.location
+        );
+
+
+        setText(
+            "issueType",
+            incident.issue_type
+        );
+
+
+        setText(
+            "severity",
+            incident.severity
+        );
+
+
+        setText(
+            "status",
+            incident.status
+        );
+
+
+        setText(
+            "detectedTime",
+            formatDateTime(
+                incident.detected_time
+            )
+        );
+
+
+        setText(
+            "dueDate",
+            formatDateTime(
+                incident.due_date
+            )
+        );
+
+
+
+        // ====================================================
+        // AUTHORITY
+        // ====================================================
+
+        setText(
+            "authority",
+            incident.assigned_authority
+        );
+
+
+        setText(
+            "authorityMobile",
+            incident.authority_mobile
+        );
+
+
+        setText(
+            "authorityEmail",
+            incident.authority_email
+        );
+
+
+        setText(
+            "firstAlert",
+            formatDateTime(
+                incident.first_alert_time
+            )
+        );
+
+
+
+        // ====================================================
+        // ESCALATION
+        // ====================================================
+
+        setText(
+            "escalationLevel",
+            incident.escalation_level
+        );
+
+
+        setText(
+            "escalationTime",
+            formatDateTime(
+                incident.escalation_time
+            )
+        );
+
+
+        setText(
+            "higherAuthority",
+            incident.higher_authority
+        );
+
+
+        setText(
+            "higherAuthorityMobile",
+            incident.higher_authority_mobile
+        );
+
+
+        setText(
+            "higherAuthorityEmail",
+            incident.higher_authority_email
+        );
+
+
+
+        // ====================================================
+        // RESOLUTION
+        // ====================================================
+
+        setText(
+            "resolvedTime",
+            formatDateTime(
+                incident.resolved_time
+            )
+        );
+
+
+
+        // Set dropdown to current status
+
+        const statusSelect =
+            document.getElementById(
+                "statusSelect"
+            );
+
+
+        if (statusSelect) {
+
+            statusSelect.value =
+                incident.status;
+
+        }
+
+
+    } catch (error) {
+
+        console.error(
+            "Incident loading error:",
+            error
+        );
+
+
+        alert(
+            "Unable to load incident details."
+        );
+
+    }
+
+}
+
+
+
+// ============================================================
+// UPDATE INCIDENT STATUS
+// ============================================================
+
+async function updateIncidentStatus() {
+
+
+    const statusSelect =
+        document.getElementById(
+            "statusSelect"
+        );
+
+
+    const button =
+        document.getElementById(
+            "updateStatusButton"
+        );
+
+
+    const message =
+        document.getElementById(
+            "updateMessage"
+        );
+
+
+    const newStatus =
+        statusSelect.value;
+
+
+    try {
+
+        button.disabled = true;
+
+
+        button.textContent =
+            "Updating...";
+
+
+        const response =
+            await fetch(
+                `/api/incidents/${incidentId}/status`,
+                {
+                    method: "PUT",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        status: newStatus
+                    })
+                }
+            );
+
+
+        const data =
+            await response.json();
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                data.error ||
+                "Status update failed"
+            );
+
+        }
+
+
+        message.textContent =
+            "Status updated successfully.";
+
+
+        message.style.color =
+            "#16a34a";
+
+
+        /*
+        Reload the incident so all
+        timestamps/status values update.
+        */
+
+        await loadIncident();
+
+
+    } catch (error) {
+
+        console.error(
+            "Status update error:",
+            error
+        );
+
+
+        message.textContent =
+            error.message;
+
+
+        message.style.color =
+            "#dc2626";
+
+
+    } finally {
+
+        button.disabled = false;
+
+
+        button.textContent =
+            "Update Status";
+
+    }
+
+}
+
+
+
+// ============================================================
+// HELPER
+// ============================================================
+
+function setText(id, value) {
+
+
+    const element =
+        document.getElementById(id);
+
+
+    if (!element) {
+
+        return;
+
+    }
+
+
+    if (
+        value === null ||
+        value === undefined ||
+        value === ""
+    ) {
+
+        element.textContent =
+            "--";
+
+    } else {
+
+        element.textContent =
+            value;
+
+    }
+
+}
+
+
+
+// ============================================================
+// DATE FORMATTER
+// ============================================================
+
+function formatDateTime(value) {
+
+
+    if (!value) {
+
+        return "--";
+
+    }
+
+
+    const date =
+        new Date(value);
+
+
+    if (isNaN(date.getTime())) {
+
+        return value;
+
+    }
+
+
+    return date.toLocaleString();
+
+}
+
+
+
+// ============================================================
+// INITIAL LOAD
+// ============================================================
+
+loadIncident();
+
+
+</script>
+
+
+</body>
+
+</html>
